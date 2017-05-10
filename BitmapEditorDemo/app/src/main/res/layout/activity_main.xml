@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.com.zhs.bitmapeditordemo.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/width_set_text"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:text="Width:" />
+
+        <EditText
+            android:id="@+id/width_set_edit"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="请输入期望的宽（px）"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/height_set_text"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:text="Height:" />
+
+        <EditText
+            android:id="@+id/height_set_edit"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="请输入期望的高(px)"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/ratio_set_text"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:text="Ratio:" />
+
+        <EditText
+            android:id="@+id/ratio_set_edit"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="请输入期望的宽高比(Width/Height)"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/size_set_text"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:text="Size_limit:" />
+
+        <EditText
+            android:id="@+id/size_set_edit"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="20dp"
+            android:ems="10"
+            android:inputType="number"
+            android:hint="请输入图片压缩的大小（Kb）"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="输入源选择" />
+
+    <RadioGroup
+        android:id="@+id/input_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <RadioButton
+            android:id="@+id/input_from_res_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="从资源里面加载图片"
+            android:checked="true"
+            />
+
+        <RadioButton
+            android:id="@+id/input_from_file_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="从File加载图片" />
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="输出选择" />
+
+    <RadioGroup
+        android:id="@+id/output_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <RadioButton
+            android:id="@+id/output_to_file_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="输出为文件"
+            android:checked="true"
+            />
+
+        <RadioButton
+            android:id="@+id/output_to_bitmap_radio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="输出为bmp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/process_btn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:text="开始Bitmap处理" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:text="信息" />
+
+    <TextView
+        android:id="@+id/info_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        android:text="" />
+
+</LinearLayout>

@@ -1,0 +1,39 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.0"
+
+    dexOptions {
+        javaMaxHeapSize "2g"
+        preDexLibraries = false //解决友盟 使用一些kotlin有关的包bug
+    }
+    defaultConfig {
+        applicationId "cn.com.zhs.bitmapeditordemo"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
+    //multidex
+    compile 'com.android.support:multidex:1.0.0'
+    //动态权限申请
+    compile 'com.github.hotchemi:permissionsdispatcher:2.3.1'
+    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:2.3.1'
+    //Rxjava
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.6'
+}
